@@ -15,10 +15,10 @@ export default async function AdminHome() {
   return (
     <div className="flex flex-col gap-8">
       <section className="rounded-2xl bg-white p-6 shadow-sm">
-        <h2 className="text-lg font-semibold">Configuración</h2>
+        <h2 className="text-lg font-semibold">Configurações</h2>
         <form action={updateIntervalAction} className="mt-4 flex items-end gap-3">
           <label className="flex flex-col text-sm text-zinc-600">
-            Intervalo del carrusel (segundos)
+            Intervalo do carrossel (segundos)
             <input
               type="number"
               name="seconds"
@@ -29,24 +29,24 @@ export default async function AdminHome() {
             />
           </label>
           <button className="rounded-md bg-zinc-900 px-4 py-2 text-sm font-semibold text-white hover:bg-zinc-700">
-            Guardar
+            Salvar
           </button>
         </form>
       </section>
 
       <section className="rounded-2xl bg-white p-6 shadow-sm">
         <div className="mb-4 flex items-center justify-between">
-          <h2 className="text-lg font-semibold">Productos ({items.length})</h2>
+          <h2 className="text-lg font-semibold">Itens ({items.length})</h2>
           <Link
             href="/admin/new"
             className="rounded-md bg-orange-500 px-4 py-2 text-sm font-semibold text-white hover:bg-orange-600"
           >
-            + Nuevo producto
+            + Novo item
           </Link>
         </div>
 
         {items.length === 0 ? (
-          <p className="text-zinc-500">Sin productos. Cargá el primero.</p>
+          <p className="text-zinc-500">Sem itens. Cadastre o primeiro.</p>
         ) : (
           <ul className="divide-y divide-zinc-200">
             {items.map((p) => (
@@ -68,10 +68,10 @@ export default async function AdminHome() {
                           : 'bg-zinc-200 text-zinc-600'
                       }`}
                     >
-                      {p.active ? 'Activo' : 'Inactivo'}
+                      {p.active ? 'Ativo' : 'Inativo'}
                     </span>
                     <IframeStatus blocked={p.iframeBlocked} />
-                    <span className="text-zinc-400">orden: {p.orderIndex}</span>
+                    <span className="text-zinc-400">ordem: {p.orderIndex}</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-2">
@@ -79,7 +79,7 @@ export default async function AdminHome() {
                     <input type="hidden" name="id" value={p.id} />
                     <input type="hidden" name="url" value={p.productUrl} />
                     <button className="rounded-md border border-zinc-300 px-3 py-1.5 text-sm hover:bg-zinc-50">
-                      Re-check iframe
+                      Verificar iframe
                     </button>
                   </form>
                   <Link
@@ -91,7 +91,7 @@ export default async function AdminHome() {
                   <form action={deleteProductAction}>
                     <input type="hidden" name="id" value={p.id} />
                     <button className="rounded-md border border-red-300 bg-red-50 px-3 py-1.5 text-sm text-red-700 hover:bg-red-100">
-                      Borrar
+                      Excluir
                     </button>
                   </form>
                 </div>
@@ -109,5 +109,5 @@ function IframeStatus({ blocked }: { blocked: boolean | null }) {
     return <span className="rounded-full bg-amber-100 px-2 py-0.5 text-amber-800">Iframe bloqueado · usa QR</span>
   if (blocked === false)
     return <span className="rounded-full bg-blue-100 px-2 py-0.5 text-blue-700">Iframe OK</span>
-  return <span className="rounded-full bg-zinc-100 px-2 py-0.5 text-zinc-500">Iframe sin chequear</span>
+  return <span className="rounded-full bg-zinc-100 px-2 py-0.5 text-zinc-500">Iframe não verificado</span>
 }

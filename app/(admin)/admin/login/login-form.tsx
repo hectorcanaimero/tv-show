@@ -11,7 +11,7 @@ export function LoginForm() {
   return (
     <form action={formAction} className="flex flex-col gap-4">
       <label className="flex flex-col gap-1 text-sm font-medium text-zinc-700">
-        Contraseña
+        Senha
         <input
           type="password"
           name="password"

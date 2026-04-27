@@ -9,7 +9,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: 'TV Showcase',
-  description: 'Vidriera de productos para TV LG',
+  description: 'Vitrine de itens para TV LG',
 }
 
 export const viewport: Viewport = {
@@ -26,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="es" className={`${inter.variable} h-full antialiased`}>
+    <html lang="pt-BR" className={`${inter.variable} h-full antialiased`}>
       <body className="min-h-full bg-zinc-950 text-zinc-100 font-sans">{children}</body>
     </html>
   )

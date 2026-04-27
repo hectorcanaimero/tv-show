@@ -9,14 +9,9 @@ type Props = {
 export function ProductForm({ action, submitLabel, defaultValues }: Props) {
   return (
     <form action={action} className="grid grid-cols-2 gap-5">
-      <Field label="Nombre" name="name" required defaultValue={defaultValues?.name} />
+      <Field label="Nome" name="name" required defaultValue={defaultValues?.name} full />
       <Field
-        label="Precio (texto libre, ej: $ 1.299)"
-        name="price"
-        defaultValue={defaultValues?.price ?? ''}
-      />
-      <Field
-        label="URL de la imagen"
+        label="URL da imagem"
         name="imageUrl"
         type="url"
         required
@@ -24,7 +19,7 @@ export function ProductForm({ action, submitLabel, defaultValues }: Props) {
         full
       />
       <Field
-        label="URL del producto (la que va al iframe)"
+        label="URL do item (a que vai ao iframe)"
         name="productUrl"
         type="url"
         required
@@ -32,7 +27,7 @@ export function ProductForm({ action, submitLabel, defaultValues }: Props) {
         full
       />
       <label className="col-span-2 flex flex-col text-sm text-zinc-700">
-        Descripción
+        Descrição
         <textarea
           name="description"
           rows={4}
@@ -42,7 +37,7 @@ export function ProductForm({ action, submitLabel, defaultValues }: Props) {
       </label>
 
       <Field
-        label="Orden"
+        label="Ordem"
         name="orderIndex"
         type="number"
         defaultValue={String(defaultValues?.orderIndex ?? 0)}
@@ -54,7 +49,7 @@ export function ProductForm({ action, submitLabel, defaultValues }: Props) {
           defaultChecked={defaultValues?.active ?? true}
           className="h-4 w-4"
         />
-        Activo (visible en la TV)
+        Ativo (visível na TV)
       </label>
 
       <div className="col-span-2 flex justify-end gap-3 pt-4">

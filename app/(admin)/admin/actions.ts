@@ -21,7 +21,7 @@ import {
 export async function loginAction(_prev: unknown, formData: FormData) {
   const password = String(formData.get('password') ?? '')
   if (!verifyPassword(password)) {
-    return { error: 'Contraseña incorrecta' }
+    return { error: 'Senha incorreta' }
   }
   await createSessionCookie()
   redirect('/admin')

@@ -85,12 +85,13 @@ export function Carousel({ items, initialIndex, intervalSeconds }: Props) {
 
   return (
     <div className="relative h-screen w-screen overflow-hidden bg-black">
-      <CarouselSlide key={product.id} product={product} />
+      <CarouselSlide key={product.id} product={product} interactive={state.status === 'paused'} />
       <CarouselControls
         status={state.status}
         index={state.index}
         total={items.length}
-        productName={product.name}
+        onToggle={() => dispatch({ type: 'TOGGLE' })}
+        onBack={goBack}
       />
     </div>
   )

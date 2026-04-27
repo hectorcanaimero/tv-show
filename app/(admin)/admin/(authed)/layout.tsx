@@ -11,17 +11,17 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           </Link>
           <nav className="flex items-center gap-4 text-sm">
             <Link href="/admin" className="hover:underline">
-              Productos
+              Itens
             </Link>
             <Link href="/admin/new" className="hover:underline">
-              Nuevo
+              Novo
             </Link>
             <Link href="/" className="hover:underline">
               Ver TV
             </Link>
             <form action={logoutAction}>
               <button className="rounded-md bg-zinc-900 px-3 py-1.5 text-white hover:bg-zinc-700">
-                Salir
+                Sair
               </button>
             </form>
           </nav>

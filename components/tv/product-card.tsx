@@ -39,9 +39,6 @@ export function ProductCard({ product, focusKey, onSelect, autoFocus }: Props) {
       </div>
       <div className="flex flex-col gap-2 p-5">
         <h2 className="line-clamp-2 text-2xl font-semibold leading-tight">{product.name}</h2>
-        {product.price ? (
-          <p className="text-xl font-medium text-orange-400">{product.price}</p>
-        ) : null}
       </div>
     </div>
   )

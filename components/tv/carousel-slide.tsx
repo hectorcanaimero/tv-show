@@ -6,7 +6,12 @@ import { QrFallback } from './qr-fallback'
 
 const IFRAME_LOAD_TIMEOUT_MS = 6000
 
-export function CarouselSlide({ product }: { product: Product }) {
+type SlideProps = {
+  product: Product
+  interactive: boolean
+}
+
+export function CarouselSlide({ product, interactive }: SlideProps) {
   const [showFallback, setShowFallback] = useState(product.iframeBlocked === true)
   const loadedRef = useRef(false)
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
@@ -34,7 +39,7 @@ export function CarouselSlide({ product }: { product: Product }) {
       key={product.id}
       src={product.productUrl}
       title={product.name}
-      tabIndex={-1}
+      tabIndex={interactive ? 0 : -1}
       sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
       referrerPolicy="no-referrer"
       onLoad={() => {
@@ -42,7 +47,7 @@ export function CarouselSlide({ product }: { product: Product }) {
         if (timerRef.current) clearTimeout(timerRef.current)
       }}
       className="absolute inset-0 h-full w-full border-0 bg-white"
-      style={{ pointerEvents: 'none' }}
+      style={{ pointerEvents: interactive ? 'auto' : 'none' }}
     />
   )
 }

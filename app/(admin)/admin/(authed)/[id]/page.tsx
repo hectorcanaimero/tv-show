@@ -14,8 +14,8 @@ export default async function EditProductPage({ params }: { params: Params }) {
 
   return (
     <div className="rounded-2xl bg-white p-6 shadow-sm">
-      <h1 className="mb-6 text-xl font-semibold">Editar producto</h1>
-      <ProductForm action={action} submitLabel="Guardar" defaultValues={product} />
+      <h1 className="mb-6 text-xl font-semibold">Editar item</h1>
+      <ProductForm action={action} submitLabel="Salvar" defaultValues={product} />
     </div>
   )
 }

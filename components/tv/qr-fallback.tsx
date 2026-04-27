@@ -18,9 +18,6 @@ export function QrFallback({ product }: { product: Product }) {
 
       <div className="flex flex-col gap-8 px-8">
         <h1 className="text-6xl font-bold leading-tight tracking-tight">{product.name}</h1>
-        {product.price ? (
-          <p className="text-5xl font-semibold text-orange-400">{product.price}</p>
-        ) : null}
         {product.description ? (
           <p className="text-2xl leading-relaxed text-zinc-300">{product.description}</p>
         ) : null}
@@ -28,8 +25,8 @@ export function QrFallback({ product }: { product: Product }) {
         <div className="mt-4 flex items-center gap-8 rounded-2xl bg-white p-6 text-zinc-900">
           <QRCodeSVG value={product.productUrl} size={240} marginSize={2} level="M" />
           <div className="flex flex-col gap-2">
-            <p className="text-3xl font-bold">Escaneá con tu celular</p>
-            <p className="text-xl text-zinc-600">Para ver el producto en detalle</p>
+            <p className="text-3xl font-bold">Escaneie com seu celular</p>
+            <p className="text-xl text-zinc-600">Para ver o item em detalhes</p>
           </div>
         </div>
       </div>
